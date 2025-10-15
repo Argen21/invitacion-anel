@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/invitation-anel",
+            "outputPath": "dist/invitacion-anel-and-antonio",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -49,13 +49,13 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kB",
-                  "maximumError": "1MB"
+                  "maximumWarning": "500mb",
+                  "maximumError": "1gb"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "4kB",
-                  "maximumError": "8kB"
+                  "maximumWarning": "4mb",
+                  "maximumError": "8mb"
                 }
               ],
               "outputHashing": "all"
