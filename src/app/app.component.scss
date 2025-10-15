@@ -1,0 +1,520 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+@use 'fontgoogle' as f;
+
+span, h1, h3, h2{
+  font-family: f.$fuente-monteCarlo;
+  text-transform: none;
+  font-size: 4rem;
+}
+
+span{
+  font-size: 3rem;
+}
+
+p{
+  font-size: 1.7rem;
+}
+
+.invitation{
+  height: 100vh;
+
+  &__header{
+    height: 100%;
+    background-image:
+    linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url('https://res.cloudinary.com/dxxf2jyg8/image/upload/v1760506988/header_v16lvh.jpg');
+    background-size: cover;
+    background-position: center;
+
+    @include m.desktop{
+      background-position-y: calc(50% + 20rem);
+    }
+
+    &-title{
+      height: 84%;
+      display: flex;
+      flex-direction: column;
+      justify-content: end;
+      align-items: center;
+      color: v.$white;
+      gap: 2rem;
+
+      h1{
+        font-size: 5.5rem;
+
+        @include m.desktop{
+          font-size: 8rem;
+        }
+      }
+
+      p{
+        font-size: 2rem;
+
+        @include m.desktop{
+          font-size: 2.5rem;
+        }
+      }
+    }
+  }
+
+  .video-wrapper {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%; /* Proporción 16:9 = (9/16)*100 */
+      height: 0;
+      margin-top: 5rem;
+      overflow: hidden;
+
+      iframe{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+      }
+    }
+
+  &__message{
+    background-color: v.$anel-principal;
+    height: 30rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 3rem;
+    gap: 2rem;
+    color: v.$white;
+
+    @include m.desktop{
+      height: 50rem;
+
+      p{
+        font-size: 2rem;
+      }
+    }
+
+    p{
+      line-height: 2.5rem;
+    }
+
+  }
+
+  &__people{
+    background-color: v.$bg-page-anel;
+    height: auto;
+    padding: 4rem 2rem;
+
+    @include m.desktop{
+      padding: 4rem 30rem;
+    }
+
+    &-block{
+      border: solid v.$anel-principal 2px;
+      padding: 4rem 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 5rem;
+      text-align: center;
+
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        line-height: 4rem;
+      }
+
+      li{
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  &__counter{
+    height: 55rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    gap: 3rem;
+    color: v.$white;
+    background-image:
+    linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url('https://res.cloudinary.com/dxxf2jyg8/image/upload/v1760506827/contador_uosrcs.jpg');
+    background-position: 55%;
+    background-size: cover;
+    color: v.$bg-page-anel;
+
+    .tiempo{
+      display: flex;
+      flex-direction: column;
+    }
+
+    span{
+      font-size: 3.5rem;
+
+      @include m.desktop{
+        font-size: 4.5rem;
+      }
+    }
+  }
+
+  &__location{
+    background-color: v.$bg-page-anel;
+    height: auto;
+    padding: 0 2rem 5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    text-align: center;
+
+    @include m.desktop{
+      padding: 0 30rem 5rem;
+    }
+
+    h3{
+      font-size: 3rem;
+      padding: 5rem;
+    }
+
+    @include m.desktop{
+      img{
+        width: 100%;
+        height: 30rem;
+        object-fit: cover;
+      }
+    }
+
+    .info{
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+      border: solid v.$anel-principal 2px;
+      border-top: none;
+      padding: 2rem;
+
+      @include m.desktop{
+        padding: 7rem;
+      }
+    }
+
+    a{
+      background-color: v.$anel-principal;
+      padding: 1rem;
+      color: v.$white;
+      text-transform: uppercase;
+    }
+  }
+
+  &__itinerary {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 2rem 5rem;
+    background-image: url('https://eventobonito.com/wp-content/uploads/2024/07/fondo-dorado.png');
+    background-size: cover;
+
+    @include m.desktop{
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+
+    &-block {
+      position: relative;
+      display: flex;
+      align-items: center;
+      text-align: start;
+      justify-content: start;
+      width: 100%;
+      gap: 3rem;
+      margin-top: 4rem;
+
+      @include m.desktop{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
+
+    .icon {
+      padding: 1.5rem;
+      font-size: 2rem;
+      border-radius: 50%;
+      color: v.$white;
+      transition: background-color 0.3s, color 0.3s;
+
+      &.active {
+        background-color: v.$anel-principal;
+      }
+    }
+
+      .info {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+      }
+
+      img{
+        width: 15rem;
+      }
+
+      .progress-line {
+        position: absolute;
+        left: 2.5rem;
+        top: 0;
+        width: 4px;
+        height: calc(100% + 5rem);
+        background: v.$gris-claro;
+        z-index: -1;
+
+        @include m.desktop{
+          left: calc(50% - 13rem);
+        }
+
+        .progress-fill {
+          background: v.$anel-principal;
+          width: 100%;
+          height: 0%;
+          transition: height 0.1s linear;
+        }
+      }
+    }
+  }
+
+  &__attendance {
+   padding: 5rem;
+  margin: 7rem 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  position: relative;
+  text-align: center;
+  background-color: v.$anel-principal;
+  color: white;
+
+  @include m.desktop{
+       clip-path: polygon(50% 0, 100% 10%, 100% 85%, 50% 100%, 0 85%, 0 10%);
+  }
+
+  h2 {
+    margin-top: 5rem;
+  }
+
+  a {
+    margin-bottom: 7rem;
+    cursor: pointer;
+  }
+
+  img {
+    width: 10rem;
+    transition: all 0.5s ease-in-out;
+    filter: invert(100%);
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.15) rotate(-5deg);
+    }
+  }
+
+  .attendance-options {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 2rem;
+    animation: fadeIn 0.4s ease-in-out;
+    margin-bottom: 7rem;
+
+    p {
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    a {
+      background-color: white;
+      color: v.$anel-principal;
+      padding: 0.8rem 1.5rem;
+      border-radius: 1rem;
+      text-decoration: none;
+      margin: 1rem;
+      font-weight: 500;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: v.$bg-page-anel;
+        color: white;
+      }
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  }
+
+  &__block{
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+    background-image: url('https://eventobonito.com/wp-content/uploads/2024/07/fondo-dorado.png');
+    background-size: cover;
+  }
+
+  &__outfit{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 5rem;
+
+
+    img{
+      width: 20rem;
+    }
+  }
+
+  &__gifts{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding:0 5rem;
+    gap: 3rem;
+
+    p{
+      font-size: 1.5rem;
+    }
+
+    details{
+      background-color: v.$white;
+      padding: 1rem 2rem;
+      border-bottom: solid 2px v.$anel-principal;
+      box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.18);
+      transition: all .5s;
+    }
+
+    summary{
+      padding: 1rem 0;
+    }
+
+    .caja{
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      align-items: center;
+      padding: 3rem 5rem;
+
+      img{
+        width: 7rem;
+      }
+    }
+  }
+
+  &__filter{
+    background-color: v.$anel-principal;
+    height: 30rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5rem;
+    gap: 4rem;
+    color: white;
+  }
+
+  .block{
+    background-image: url('https://eventobonito.com/wp-content/uploads/2024/07/fondo-dorado.png') ;
+    background-size: cover;
+  }
+
+  &__agradecimiento{
+    height: 40rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 3rem;
+    padding: 5rem;
+    margin-top: -7rem;
+
+    i{
+      font-size: 2rem;
+    }
+  }
+
+&__gallery {
+  @include m.desktop {
+    display: grid;
+    grid-template-columns: 50% 50%;
+  }
+
+  &-block {
+    height: 55rem;
+    width: auto;
+
+    @include m.desktop {
+      margin-bottom: 5rem;
+
+      &:nth-child(odd) img {
+        transform: rotate(-2.5deg);
+      }
+
+      &:nth-child(even) img {
+        transform: rotate(2.5deg);
+      }
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+
+      @include m.desktop {
+        object-fit: contain;
+      }
+    }
+
+
+  }
+}
+
+
+
+
+
+}
+
+.border{
+    background-image: url('/assets/img/invitations/lissette/borde-roto.png');
+    background-position: top;
+    border: none;
+    background-size: cover;
+    bottom: 0;
+    width: 100%;
+    position: absolute;
+    height: 10rem;
+
+    @include m.desktop{
+      display: none;
+    }
+
+
+    &--2{
+      top: -2.5rem;
+      transform: rotate(180deg);
+    }
+
+}

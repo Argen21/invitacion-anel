@@ -27,14 +27,25 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               {
-                "glob": "**/*",
-                "input": "public"
+                 "glob": "**/*",
+                "input": "src/assets",
+                "output": "/assets"
               }
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "node_modules/@fortawesome/fontawesome-free/css/all.min.css",
+              "src/assets/fontgoogle.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "src/scss",
+                "src/assets",
+                "src/assets/scss",
+                "src/assets"
+              ]
+            }
           },
           "configurations": {
             "production": {
@@ -91,9 +102,17 @@
               }
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "node_modules/@fortawesome/fontawesome-free/css/all.min.css",
+              "src/assets/fontgoogle.scss"
             ],
-            "scripts": []
+            "scripts": [],
+              "stylePreprocessorOptions": {
+              "includePaths": [
+                "src/scss",
+                "src/assets"
+              ]
+            }
           }
         }
       }
