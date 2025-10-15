@@ -1,10 +1,11 @@
 import { Component, ElementRef, HostListener, QueryList, ViewChildren } from '@angular/core';
 import { ContadorService } from './services/contador.service';
 import { CommonModule } from '@angular/common';
+import { MusicComponentComponent } from "./components/music-component/music-component.component";
 
 @Component({
   selector: 'app-root',
-  imports: [CommonModule],
+  imports: [CommonModule, MusicComponentComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
@@ -14,6 +15,7 @@ export class AppComponent {
 
     ngOnInit(): void {
     this.contadorService.iniciarContador("2026-02-14T16:00:00");
+
     }
 
 @ViewChildren('block') blocks!: QueryList<ElementRef>;

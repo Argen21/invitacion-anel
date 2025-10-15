@@ -29,6 +29,8 @@ private audio: HTMLAudioElement | null = null;
 
     this.audio.addEventListener('loadedmetadata', () => {
       this.durationSubject.next(this.audio!.duration);
+
+      this.audio!.currentTime = 4;
     });
 
     this.audio.addEventListener('play', () => {

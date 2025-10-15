@@ -1,0 +1,14 @@
+<section class="music">
+  <button class="music__play-button "
+    (click)="musicService.togglePlay()">
+    <span *ngIf="!(musicService.isPlaying$ | async)"
+      class="icon-play"></span>
+
+    <span *ngIf="musicService.isPlaying$ | async"
+      class="icon-pause">
+      <span></span>
+      <span></span>
+    </span>
+  </button>
+
+</section>
